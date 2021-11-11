@@ -1,0 +1,16 @@
+version: '3'
+services:
+  server1:
+    image: server1
+    container_name: dc_server1
+    ports:
+      - "3001:3001"
+    restart: always
+  server2:
+    image: server2
+    container_name: dc_server2
+    ports:
+      - "3002:3002"
+    restart: always
+    links:
+      - server1
